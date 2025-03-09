@@ -3,9 +3,9 @@
 
 Create one folder and inside this folder create index.js and instantiate the express server, call dbConnect(),
 
-mount a route a route(./api/v1), and activate the server.
+mount a route (./api/v1), and activate the server.
 
-### Open your terminal and run following commands:
+### Open your terminal and run the following commands:
 
 a) npm init -y
 
@@ -17,7 +17,7 @@ d) npm install nodemon and make changes in package.json
 
 e) npm install dotenv
 
-Create a new file named .env and add your mongodb URL and PORT
+Create a new file named .env and add your MongoDB URL and PORT
 
 Create a folder config and create one file database.js. Add your database connection code here.
 
@@ -33,7 +33,7 @@ rewrite in prettier way
 
 ### Step-by-Step Instructions to Set Up an Express Server with MongoDB
 
-### 1. Create Project Structure
+**1. Create Project Structure**
 Create a main project folder.
 Inside this folder, create a file named index.js and include the following code to set up your Express server:
 
