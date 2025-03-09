@@ -1,11 +1,11 @@
 
-Steps to follow:
+### Steps to follow:
 
 Create one folder and inside this folder create index.js and instantiate the express server, call dbConnect(),
 
 mount a route a route(./api/v1), and activate the server.
 
-Open your terminal and run following commands:
+### Open your terminal and run following commands:
 
 a) npm init -y
 
@@ -31,13 +31,12 @@ Create routes folder and add one file blogRoute.js and add your route code here.
 
 rewrite in prettier way
 
-Step-by-Step Instructions to Set Up an Express Server with MongoDB
-1. Create Project Structure
+### Step-by-Step Instructions to Set Up an Express Server with MongoDB
+
+### 1. Create Project Structure
 Create a main project folder.
 Inside this folder, create a file named index.js and include the following code to set up your Express server:
-javascript
 
-Copy
 const express = require('express');
 const dbConnect = require('./config/database.js'); // Make sure to implement this function
 const app = express();
@@ -56,59 +55,49 @@ app.use('/api/v1', require('./routes/blogRoute.js')); // Implement this route in
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-2. Setup NPM and Install Necessary Packages
+
+### 2. Setup NPM and Install Necessary Packages
+   
 Open your terminal and execute the following commands:
 
-Initialize a new Node.js project:
+**Initialize a new Node.js project:**
 
-bash
 
-Copy
 npm init -y
 Install Express:
 
-bash
-
-Copy
 npm install express
-Install Mongoose for MongoDB interaction:
 
-bash
+***Install Mongoose for MongoDB interaction:**
 
-Copy
 npm install mongoose
-Install Nodemon for development (automatically restarts your server):
 
-bash
+**Install Nodemon for development (automatically restarts your server):**
 
-Copy
 npm install nodemon
-Update package.json to use Nodemon by modifying the "scripts" section:
-json
 
-Copy
+**Update package.json to use Nodemon by modifying the "scripts" section:**
+
 "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
 }
-Install dotenv for environment variable management:
 
-bash
+**Install dotenv for environment variable management:**
 
-Copy
 npm install dotenv
-3. Create Environment Configuration
-Create a file named .env in the project root directory and add your MongoDB connection URL and desired port:
-text
 
-Copy
+### 3. Create Environment Configuration
+
+***Create a file named .env in the project root directory and add your MongoDB connection URL and desired port:**
+
 MONGODB_URI=your_mongodb_connection_string
 PORT=5000
-4. Configure Database Connection
-Create a folder named config and add a file named database.js. Implement the database connection logic inside this file:
-javascript
 
-Copy
+### 4. Configure Database Connection
+
+Create a folder named config and add a file named database.js. Implement the database connection logic inside this file:
+
 const mongoose = require('mongoose');
 require('dotenv').config();
 
@@ -123,12 +112,14 @@ const dbConnect = async () => {
 };
 
 module.exports = dbConnect;
-5. Create Controllers
+
+### 5. Create Controllers
 Create a folder named controllers and add three files:
-postController.js
-likeController.js
-commentController.js
-In each of these files, you will implement route handler functions appropriate for each entity.
+
+-> postController.js
+-> likeController.js
+-> commentController.js
+You will implement route handler functions appropriate for each entity in each of these files.
 
 6. Create Models
 Create a folder named models and add three files:
@@ -153,9 +144,7 @@ Repeat similar structure for likeModel.js and commentModel.js.
 
 7. Create Routes
 Create a folder named routes and add a file named blogRoute.js. Set up your routes here, making sure to link to the controllers created earlier.
-javascript
 
-Copy
 const express = require('express');
 const router = express.Router();
 const postController = require('../controllers/postController');
@@ -166,7 +155,8 @@ router.get('/posts', postController.getPosts);
 // Add more routes as necessary
 
 module.exports = router;
-Summary
+
+### Summary
 You have now set up a basic project structure for an Express application connected to MongoDB.
 You have initialized npm, installed dependencies, created configuration files, and set up controllers, models, and routes.
 Don’t forget to implement the logic inside each controller and model file as needed for your application.
