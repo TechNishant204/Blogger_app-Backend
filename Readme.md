@@ -1,4 +1,4 @@
-
+### Blogger_app - create post, comments and likes
 ### Steps to follow:
 
 Create one folder and inside this folder create index.js and instantiate the express server, call dbConnect(),
