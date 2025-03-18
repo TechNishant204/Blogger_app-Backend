@@ -5,8 +5,10 @@ exports.createComment = async (req, res) => {
   try {
     //fetch the data from request body
     const { post, user, body } = req.body;
+
     //create a comment object
     const comment = new Comment({ post, user, body });
+
     //using save method to save the comment in database
     const savedComment = await comment.save(); //after saving the comment in database, we will return the saved comment object
 
@@ -21,7 +23,9 @@ exports.createComment = async (req, res) => {
       .exec();
 
     res.json({
+      success: true,
       post: updatedPost,
+      message: "comment created successfully",
     });
   } catch (err) {
     return res.status(500).json({

@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 //router handler
 const likeSchema = new mongoose.Schema({
   post: {
-    type: mongoose.Schema.Types.ObjectId,
+    type: mongoose.Schema.Types.ObjectId, // fetch the id of the post that was liked
     ref: "Post", //reference to the post model
   },
   user: {
@@ -13,4 +13,5 @@ const likeSchema = new mongoose.Schema({
   },
 });
 
+//export
 module.exports = mongoose.model("Like", likeSchema);
